@@ -8,20 +8,91 @@ nej
 */
 
 
-const myAnsverInput = document.getElementById('answerOne');
-const myAnsverButton = document.getElementById('answerButton');
-const myAnsverFeedbackElement = document.getElementById('answerFeedback');
+const myAnsverInput = document.getElementById('answerOne'); // input 1
+const myAnsverButton = document.getElementById('answerButton'); //svar knap
+const myAnsverFeedbackElement = document.getElementById('answerFeedback'); //feedback h4
 
-myAnsverButton.addEventListener('click', () => {
+// //click event for svar knap
+// myAnsverButton.addEventListener('click', (myButton) => {
+// myButton.preventDefault();
+// gatherInputAnswer();
+// });
 
-    /* din kode her.  husk at skrive view funktion der viser om svaret er korrekt i myAnsverFeedbackElement, brug evt. innerHTML*/
+// //Ondsaml hvad som er valgt i dropdown listen
+// function gatherInputAnswer() {
+// if (myAnsverInput.value === 'true') { //Hvis valuen er true køres funktionen her under
+ 
+//   showTrueResult();
+//   console.log('korrekte svar');
+// } else {    //Hvis valuen er false køres funktionen her under
 
-});
+//   showFalseResult();
+//   console.log('forkert svar');
+// }
 
+// }
+// //true funktion = korrekt svar
+// function showTrueResult() {
+//   const TrueResult = document.getElementById('answerFeedback');
+//   TrueResult.innerHTML = 'Korrekt svar';
+
+// };
+// //false funktion = forkert svar
+// function showFalseResult() {
+//   const FalseResult = document.getElementById('answerFeedback');
+//   FalseResult.innerHTML = 'Forkert svar';
+// }
+
+    
 /*Opgave 2: udkommenter opgave 1, og omskriv nu din funktion til to korrekte svar:
 nej
 ja i disney film
 */
+
+
+//click event for svar knap
+myAnsverButton.addEventListener('click', (myButton) => {
+  myButton.preventDefault();
+  gatherInputAnswer();
+});
+
+//false = ja
+//true = nej
+//true2 = ja, i disney film
+
+//Indsaml hvad som er valgt i dropdown listen
+function gatherInputAnswer() {
+  if (myAnsverInput.value === 'true') { //Hvis valuen er true køres funktionen her under
+  showTrueResult();
+  console.log('svar nej');
+
+  } else if (myAnsverInput.value === 'true2') {    //Hvis valuen er true2 køres funktionen her under
+  showTrue2Result();
+  console.log('svar ja, i disney film');
+
+  } else {    //Hvis valuen er false køres funktionen her under
+  showFalseResult();
+  console.log('svar ja');
+  }
+
+}
+//true funktion = korrekt svar
+function showTrueResult() {
+   const TrueResult = document.getElementById('answerFeedback');
+   TrueResult.innerHTML = 'Korrekt svar';
+
+ };
+ //True funtion korret svar i disney film
+ function showTrue2Result() {
+  const True2Result = document.getElementById('answerFeedback');
+  True2Result.innerHTML = 'Korrekt svar, de findes kun i disney film';
+
+};
+ //false funktion = forkert svar
+ function showFalseResult() {
+   const FalseResult = document.getElementById('answerFeedback');
+   FalseResult.innerHTML = 'Forkert svar';
+ }
 
 
 /*opgave 3: skriv en kode der valider formen med følgende elementer: (denne opgave er på extreme niveau) 
