@@ -95,6 +95,8 @@ function showTrueResult() {
  }
 
 
+
+
 /*opgave 3: skriv en kode der valider formen med følgende elementer: (denne opgave er på extreme niveau) 
 
 - korrekt e-mail type. brug funktionen "validateEmail(minEmail) til at checke en string med den indtastede email
@@ -106,20 +108,50 @@ function showTrueResult() {
 
 
 
+const myButton = document.getElementById('submitButton');
+let myAge = document.getElementById('myAge');
+
+myButton.addEventListener('click', (myButtonform) => {
+  myButtonform.preventDefault();
+console.log('klikket på knap');
+  
+();
+
+});
+
+//validering af navn
+document.getElementById('myName').addEventListener("keyup", function() {
+  let nameInput = this.value;
+  let besked = "";
+  if (nameInput.length < 3) {
+    besked = "Navnet skal være længere end 3 bogstaver";
+  }
+  document.getElementById('formValideringResult').innerHTML = besked;
+});
+
+//validering af alder
+document.getElementById('myAge').addEventListener("keyup", function() {
+  let AgeInput = this.value;
+  let besked = "";
+  if (AgeInput < 12) {
+    besked = "Alder skal værre større end 12";
+  }
+  document.getElementById('formValideringResult').innerHTML = besked;
+});
 
 
-
+//validering af e-mail
 
 /* helper functions*/
 function validateEmail(email) {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
 }
 
 /* eks på kald:
 if (validateEmail("test@example.com")) {
-  console.log("Valid email address");
+console.log("Valid email address");
 } else {
-  console.log("Invalid email address");
+console.log("Invalid email address");
 }
 */
